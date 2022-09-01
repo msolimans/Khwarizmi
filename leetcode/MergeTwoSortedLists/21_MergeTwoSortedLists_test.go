@@ -48,6 +48,11 @@ func TestMergeTwoLists(t *testing.T){
 			in2: &ListNode{Val: 10},
 			out: &ListNode{Val: 10},
 		},
+		{
+			in1: Init([]int{1,2,4}),
+			in2: Init([]int{1,3,4}),
+			out: Init([]int{1,1,2,3,4,4}),
+		},
 	}
 
 	for _,v :=range cases {
