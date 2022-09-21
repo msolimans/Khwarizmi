@@ -1,4 +1,4 @@
-package datastructure
+package simple
 
 //first in, last out
 type Stack []string
