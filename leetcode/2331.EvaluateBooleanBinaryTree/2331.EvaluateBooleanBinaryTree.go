@@ -15,13 +15,17 @@ func evaluateTree(root *TreeNode) bool {
 	//3 means AND 
 	//0 means false 
 	//1 means true 
-	if evalNode(root) == 0 {
-		return false 
-	}
-
-	return true 
+	
+	return !(evalNode(root) == 0)
+	
+	//can be rewritten to (more readable)
+	// if evalNode(root) == 0 {
+	// 	return false 
+	// }
+	// return true 
 }
 
+//this needs postfix traversal and propagate results bottom-up 
 func evalNode(root *TreeNode) int {
 	//handling children of leaf nodes 
 	if root == nil {

@@ -12,6 +12,10 @@ type TreeNode struct {
 	Right *TreeNode 
 }
 
+func Int(i int) *int{
+	return &i 
+}
+
 //used for unit testing purposes 
 func InitTreeNode(input []*int) *TreeNode {
 	// [0,2,4,1,null,3,-1,5,1,null,6,null,8]
