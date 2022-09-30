@@ -21,3 +21,29 @@ func twoSum(numbers []int, target int) []int {
     
     
 }
+
+
+
+//second solution (using hashmaps) 
+func twoSum2(numbers []int, target int) []int {
+    mp := map[int]int{} 
+    
+    //save into map (pair of numbers and their indexes)
+    for i:=0;i<len(numbers);i++ {
+        mp[numbers[i]] = i 
+    }
+    
+    //now we look at each one and compare it with the target 
+    for i := 0;i<len(numbers);i++ {
+        goal := target - numbers[i] 
+        if _, exists := mp[goal]; exists {
+            if i < mp[goal] {
+                return []int{i+1, mp[goal]+1}
+            } else {
+                return []int{mp[goal]+1, i+1}
+            }
+        }
+    }
+    
+    return []int{}
+}
