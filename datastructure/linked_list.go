@@ -5,7 +5,7 @@ type LinkedList struct {
 }
 
 type LinkedListNode struct {
-	val int 
+	val any 
 	next *LinkedListNode
 }
 
@@ -35,7 +35,7 @@ func (l *LinkedList) PushFront(i int ) {
 	l.root = c 
 }
 
-func (l *LinkedList) PopFront() (int, bool) {
+func (l *LinkedList) PopFront() (any, bool) {
 	if l.root == nil {
 		return -1, false 
 	}
@@ -45,7 +45,7 @@ func (l *LinkedList) PopFront() (int, bool) {
 	return c.val, true
 }
 
-func (l *LinkedList) PopLast() (int, bool) {
+func (l *LinkedList) PopLast() (any, bool) {
 	if l.root == nil {
 		return -1, false 
 	}
