@@ -18,6 +18,9 @@ func Int(i int) *int{
 
 //used for unit testing purposes 
 func InitTreeNode(input []*int) *TreeNode {
+	if len(input) == 0 {
+		return nil 
+	}
 	// [0,2,4,1,null,3,-1,5,1,null,6,null,8]
 	root := &TreeNode {Val: *input[0] }
 	
