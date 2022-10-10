@@ -1,5 +1,10 @@
 package validanagram
 
+import (
+	"sort"
+	"strings"
+)
+
 func isAnagram(s string, t string) bool {
 	//XOR is not good here [in case of similar chars in but different in strings] like "aa" and "bb" or "xaabby" and "xddrry"
 	 mp := map[rune]int{}
@@ -27,3 +32,22 @@ func isAnagram(s string, t string) bool {
 	 
 	 
  }
+
+ ///////
+
+func isAnagram2(s string, t string) bool {
+	//sort both strings and compare if they are equal 
+
+	s = sortStr(s)
+	t = sortStr(t) 
+	
+	return s == t 
+}
+
+
+func sortStr(s string) string {
+	ss := strings.Split(s, "")
+	sort.Strings(ss)
+
+	return strings.Join(ss,"")
+}
